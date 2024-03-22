@@ -9,7 +9,7 @@ Author: Suresh Dutt
 require 'plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://github.com/sureshit13/Cf7-Mail-Testing-Plugin.git',
+	'https://github.com/sureshit13/Cf7-Mail-Testing-Plugin/',
 	__FILE__,
 	'cf7-mail-testing-plugin'
 );
