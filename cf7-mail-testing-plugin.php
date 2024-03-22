@@ -11,9 +11,10 @@ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $myUpdateChecker = PucFactory::buildUpdateChecker(
 	'https://github.com/sureshit13/Cf7-Mail-Testing-Plugin.git',
 	__FILE__,
-	'Cf7-Mail-Testing-Plugin'
+	'cf7-mail-testing-plugin'
 );
 $myUpdateChecker->setBranch('main');
+$myUpdateChecker->getVcsApi()->enableReleaseAssets();
 $myUpdateChecker->setAuthentication('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');
 // Add settings link to plugins list
 add_filter('plugin_action_links', 'custom_plugin_settings_link', 10, 2);
