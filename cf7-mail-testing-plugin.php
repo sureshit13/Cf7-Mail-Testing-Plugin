@@ -3,7 +3,7 @@
 Plugin Name: Cf7 Mail Testing Plugin
 Plugin URI: https://github.com/sureshit13/Cf7-Mail-Testing-Plugin.git
 Description: This plugin skips sending emails for Contact Form 7 submissions and sends the email to a specified custom email address.
-Version: 1.6
+Version: 1.7
 Author: Suresh Dutt
 */
 require 'plugin-update-checker/plugin-update-checker.php';
