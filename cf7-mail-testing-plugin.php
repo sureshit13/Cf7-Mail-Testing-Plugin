@@ -7,6 +7,7 @@ Version: 1.0
 Author: Suresh Dutt
 */
 require 'plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $myUpdateChecker = PucFactory::buildUpdateChecker(
 	'https://github.com/sureshit13/Cf7-Mail-Testing-Plugin.git',
 	__FILE__,
