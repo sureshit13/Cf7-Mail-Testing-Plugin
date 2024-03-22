@@ -3,7 +3,7 @@
 Plugin Name: Cf7 Mail Testing Plugin
 Plugin URI: https://github.com/sureshit13/Cf7-Mail-Testing-Plugin.git
 Description: This plugin skips sending emails for Contact Form 7 submissions and sends the email to a specified custom email address.
-Version: 1.7
+Version: 1.8
 Author: Suresh Dutt
 */
 require 'plugin-update-checker/plugin-update-checker.php';
@@ -37,30 +37,6 @@ function custom_menu_plugin_setup()
     // Add a new top-level menu
     add_menu_page('Custom Plugin Settings', 'Contact Form 7 Mail Testing', 'manage_options', 'custom-plugin', 'custom_plugin_page');
     // Check for updates on plugin page load
-    add_action('admin_init', 'custom_plugin_check_for_update');
-}
-
-// Function to check for plugin updates
-function custom_plugin_check_for_update()
-{
-    $plugin_slug = plugin_basename(__FILE__);
-    $plugin_data = get_plugin_data(WP_PLUGIN_DIR . '/' . $plugin_slug);
-    $plugin_version = $plugin_data['Version'];
-
-    // Get the latest version of the plugin from the WordPress Plugin Repository
-    $response = wp_remote_get('https://api.wordpress.org/plugins/info/1.0/' . $plugin_slug . '.json');
-    if (!is_wp_error($response)) {
-        $body = wp_remote_retrieve_body($response);
-        $data = json_decode($body, true);
-
-        // Compare the installed version with the latest version
-        if (version_compare($plugin_version, $data['version'], '<')) {
-            // Set plugin update notification
-            add_action('admin_notices', function () use ($data) {
-                echo '<div class="notice notice-info"><p>There is a new version of the Cf7 Mail Testing Plugin available: <strong>' . $data['version'] . '</strong>. <a href="' . $data['download_link'] . '">Update Now</a></p></div>';
-            });
-        }
-    }
 }
 
 // Function to render the menu page
