@@ -14,7 +14,7 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 	'Cf7-Mail-Testing-Plugin'
 );
 $myUpdateChecker->setBranch('main');
-//$myUpdateChecker->setAuthentication('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');
+$myUpdateChecker->setAuthentication('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');
 // Add settings link to plugins list
 add_filter('plugin_action_links', 'custom_plugin_settings_link', 10, 2);
 function custom_plugin_settings_link($links, $file)
